@@ -1,15 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { Box, Grid } from '@material-ui/core';
 import GettingStarted from './GettingStarted';
 import PostList from './PostList';
 import Suggestions from './Suggestions';
 import UserInfo from './UserInfo';
 
-const useStyles = makeStyles((theme) => ({}));
-
 export default function Dashboard() {
-    const classes = useStyles();
     const suggestions = [{
         username: 'markymark',
         fullName: 'Mark Griffis',
