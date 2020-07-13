@@ -66,7 +66,7 @@ export const getPosts = async (store, username) => {
                     username: 'aviture',
                     avatarUrl: `https://www.aviture.us.com/hubfs/Website%20Rebrand%20-%202019/2019%20Rebrand%20Assets/AVT-Rebrand-Red-Favicon-01.svg`,
                     likes: 3,
-                    imageUrl: 'https://www.covenantcare.com/wp-content/uploads/2018/06/CC_4thJuly2016.png',
+                    imageUrl: 'https://i.pinimg.com/564x/2e/be/1f/2ebe1fea1a94186717b33d63d04fbe5b.jpg',
                     comments: [],
                     message: 'Have a safe and happy 4th of July weekend!',
                     timestamp: '2020-07-04T09:34:00',
