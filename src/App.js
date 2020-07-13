@@ -5,6 +5,7 @@ import PrimaryNavigation from './components/PrimaryNavigation';
 import Dashboard from './components/Dashboard';
 import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import useGlobal from './store';
+import config from './config';
 
 const theme = createMuiTheme({
     palette: {
@@ -34,7 +35,7 @@ export default function BasicExample() {
     const [state, actions] = useGlobal();
     useEffect(() => {
         const loadData = async () => {
-            await Promise.all([actions.getUser(), actions.getSuggestions(), actions.getPosts()]);
+            await Promise.all([actions.getUser(config.username), actions.getSuggestions(config.username), actions.getPosts(config.username)]);
         };
         
         loadData();

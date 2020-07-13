@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Avatar, Box, Grid, Typography } from '@material-ui/core';
 
@@ -32,12 +31,5 @@ function UserInfo(props) {
         </Grid>
     );
 }
-
-UserInfo.propTypes = {
-    avatar: PropTypes.string,
-    username: PropTypes.string.isRequired,
-    fullName: PropTypes.string.isRequired,
-    avatarSize: PropTypes.oneOf(['small', 'large']),
-};
 
 export default UserInfo;

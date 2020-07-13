@@ -44,9 +44,7 @@ function Post(props) {
 
     const comments = props.comments.map((comment) => {
         const commentMarkdown = `**${comment.username}** ${comment.message}`;
-        return (
-            <ReactMarkdown source={commentMarkdown} />
-        )
+        return <ReactMarkdown source={commentMarkdown} key={`${comment.username}-${new Date().getMilliseconds()}`}/>;
     });
 
     return (
@@ -114,6 +112,7 @@ export default function PostList(props) {
                         message={post.message}
                         comments={post.comments}
                         timestamp={post.timestamp}
+                        key={`${post.username}-${post.timestamp}`}
                     />
                 );
             })}

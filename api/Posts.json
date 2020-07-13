@@ -2,7 +2,7 @@
     "username": "aviture",
     "avatarUrl": "https://www.aviture.us.com/hubfs/Website%20Rebrand%20-%202019/2019%20Rebrand%20Assets/AVT-Rebrand-Red-Favicon-01.svg",
     "likes": 3,
-    "imageUrl": "https://www.covenantcare.com/wp-content/uploads/2018/06/CC_4thJuly2016.png",
+    "imageUrl": "https://i.pinimg.com/564x/2e/be/1f/2ebe1fea1a94186717b33d63d04fbe5b.jpg",
     "comments": [],
     "message": "Have a safe and happy 4th of July weekend!",
     "timestamp": "2020-07-04T09:34:00"
@@ -31,4 +31,26 @@
     }],
     "message": "Ocean, my friend, how I miss you!  Who's in for a 2021 beach party eh?  I'll bring the bacon!",
     "timestamp": "2020-07-05T09:34:00"
+}, {
+    "username": "markymark",
+    "avatarUrl": "https://www.aviture.us.com/wp-content/uploads/2020/06/aviture-team-mark-griffis-headshot.png",
+    "likes": 107,
+    "imageUrl": "https://i.kym-cdn.com/photos/images/original/000/851/799/74c.gif",
+    "comments": [{
+        "username": "naytay",
+        "message": "You're right, and I watched the Chiefs win the Super Bowl last year.  That's saying something."
+    }, {
+        "username": "christine",
+        "message": "Why you gotta bring the Super Bowl up?  Too soon man, too soon."
+    }],
+    "message": "This AWS 101 Workshop is hands down the best thing I've ever seen.",
+    "timestamp": "2020-07-13T09:34:00"
+}, {
+    "username": "jerrykoske",
+    "avatarUrl": "https://www.aviture.us.com/wp-content/uploads/2020/06/aviture-team-jerry-koske-headshot.png",
+    "likes": 0,
+    "imageUrl": "https://www.gannett-cdn.com/-mm-/1fecae5856e58374cc9e1c0fd6dcc3c6aae79d4e/c=0-293-5760-3547/local/-/media/2017/04/18/IAGroup/DesMoines/636281232925835548-WindPower1.jpg?width=660&height=372&fit=crop&format=pjpg&auto=webp",
+    "comments": [],
+    "message": "Vacation is so amazing!  Everyone should get out and enjoy the wide open roads of Iowa sometime in their lives.",
+    "timestamp": "2020-07-11T09:34:00"
 }]

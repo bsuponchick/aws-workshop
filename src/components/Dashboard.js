@@ -20,11 +20,11 @@ export default function Dashboard(props) {
                     <UserInfo
                         username={user.username}
                         fullName={user.fullName}
-                        avatarSize={7}
+                        avatarSize="large"
                         avatarUrl={user.avatarUrl}
                     />
                 </Box>
-                <Suggestions suggestions={suggestions} />
+                <Suggestions currentUser={user} suggestions={suggestions} />
             </Grid>
         </Grid>
     );
