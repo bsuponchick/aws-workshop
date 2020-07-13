@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container, Paper } from '@material-ui/core';
 import PrimaryNavigation from './components/PrimaryNavigation';
 import Dashboard from './components/Dashboard';
 import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import useGlobal from './store';
 
 const theme = createMuiTheme({
     palette: {
@@ -30,17 +31,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BasicExample() {
     const classes = useStyles();
+    const [state, actions] = useGlobal();
+    useEffect(() => {
+        const loadData = async () => {
+            await Promise.all([actions.getUser(), actions.getSuggestions(), actions.getPosts()]);
+        };
+        
+        loadData();
+    }, [actions]);
 
     return (
         <ThemeProvider theme={theme}>
             <Router>
-                <PrimaryNavigation />
+                <PrimaryNavigation user={state.user}/>
 
                 <Container className={classes.content} maxWidth="md">
                     <Paper elevation={0}>
                         <Switch>
                             <Route exact path="/">
-                                <Dashboard />
+                                <Dashboard posts={state.posts} suggestions={state.suggestions} user={state.user}/>
                             </Route>
                             <Route path="/explore">
                                 <Explore />
@@ -55,9 +64,6 @@ export default function BasicExample() {
         </ThemeProvider>
     );
 }
-
-// You can think of these components as "pages"
-// in your app.
 
 function Explore() {
     return (

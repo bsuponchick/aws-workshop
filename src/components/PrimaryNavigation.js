@@ -76,8 +76,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function PrimaryNavigation() {
+export default function PrimaryNavigation(props) {
     const classes = useStyles();
+    const {user} = props;
 
     return (
         <div className={classes.grow}>
@@ -115,7 +116,7 @@ export default function PrimaryNavigation() {
                             <IconButton edge="end" aria-label="account of current user" color="primary">
                                 <Avatar
                                     className={classes.icon}
-                                    src={`https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/49635227_2615791525104260_7169389594960461824_o.jpg?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=ksKbaxNyeJ0AX9tT0DD&_nc_ht=scontent-dfw5-2.xx&oh=e7d521ad0724aed48bdcb7ecfe529c0c&oe=5F296565`}
+                                    src={user.avatarUrl}
                                 />
                             </IconButton>
                         </Link>
