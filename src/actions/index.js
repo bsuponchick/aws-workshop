@@ -52,6 +52,57 @@ export const getSuggestions = async (store, username) => {
     });
 };
 
+export const getExploreTiles = async (store, username) => {
+    store.setState({
+        exploreTiles: [
+            {
+                img: 'https://s3.amazonaws.com/assets.suponchick.com/IMG_0501.JPG',
+                title: `Don't ask no questions!`,
+                author: 'bsuponchick',
+            },
+            {
+                img: 'https://s3.amazonaws.com/assets.suponchick.com/IMG_0581.JPG',
+                title: `It's Miller Time...`,
+                author: 'dailycrusade'
+            },
+            {
+                img: 'https://s3.amazonaws.com/assets.suponchick.com/IMG_0588.JPG',
+                title: 'Dancing in Cabo',
+                author: 'ryanwade'
+            },
+            {
+                img: 'https://s3.amazonaws.com/assets.suponchick.com/IMG_0593.JPG',
+                title: 'The crew in Cabo',
+                author: 'dasmixan'
+            },
+            {
+                img: 'https://s3.amazonaws.com/assets.suponchick.com/IMG_0603.JPG',
+                title: 'Mathai knows how to party',
+                author: 'bsuponchick'
+            },
+            {
+                img: 'https://s3.amazonaws.com/assets.suponchick.com/IMG_1317.jpg',
+                title: 'Balloons at sunrise',
+                author: 'bsuponchick'
+            },
+            {
+                img: 'https://s3.amazonaws.com/assets.suponchick.com/IMG_1346.jpg',
+                title: 'Enjoying a day at the river front',
+                author: 'ashleygregory'
+            },
+            {
+                img: 'https://s3.amazonaws.com/assets.suponchick.com/IMG_1455.JPG',
+                title: 'Aviture invades AWS re:Invent',
+                author: 'dasmixan'
+            }, {
+                img: 'https://s3.amazonaws.com/assets.suponchick.com/IMG_1485.JPG',
+                title: 'High Rollin',
+                author: 'dammitwenner'
+            }
+        ]
+    })
+};
+
 export const getPosts = async (store, username) => {
     if (config.apiGatewayInvokeUrl) {
         const response = await fetch(`${config.apiGatewayInvokeUrl}/posts?username=${username}`);

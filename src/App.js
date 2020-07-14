@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container, Paper } from '@material-ui/core';
 import PrimaryNavigation from './components/PrimaryNavigation';
 import Dashboard from './components/Dashboard';
+import Explore from './components/Explore';
 import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import useGlobal from './store';
 import config from './config';
@@ -35,25 +36,30 @@ export default function BasicExample() {
     const [state, actions] = useGlobal();
     useEffect(() => {
         const loadData = async () => {
-            await Promise.all([actions.getUser(config.username), actions.getSuggestions(config.username), actions.getPosts(config.username)]);
+            await Promise.all([
+                actions.getUser(config.username),
+                actions.getSuggestions(config.username),
+                actions.getPosts(config.username),
+                actions.getExploreTiles(config.username),
+            ]);
         };
-        
+
         loadData();
     }, [actions]);
 
     return (
         <ThemeProvider theme={theme}>
             <Router>
-                <PrimaryNavigation user={state.user}/>
+                <PrimaryNavigation user={state.user} />
 
                 <Container className={classes.content} maxWidth="md">
                     <Paper elevation={0}>
                         <Switch>
                             <Route exact path="/">
-                                <Dashboard posts={state.posts} suggestions={state.suggestions} user={state.user}/>
+                                <Dashboard posts={state.posts} suggestions={state.suggestions} user={state.user} />
                             </Route>
                             <Route path="/explore">
-                                <Explore />
+                                <Explore tiles={state.exploreTiles} />
                             </Route>
                             <Route path="/profile">
                                 <Profile />
@@ -63,14 +69,6 @@ export default function BasicExample() {
                 </Container>
             </Router>
         </ThemeProvider>
-    );
-}
-
-function Explore() {
-    return (
-        <div>
-            <h2>Explore</h2>
-        </div>
     );
 }
 
