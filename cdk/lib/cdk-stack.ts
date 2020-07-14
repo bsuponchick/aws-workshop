@@ -22,7 +22,8 @@ export class CdkStack extends cdk.Stack {
       partitionKey: {
         name: 'username',
         type: dynamodb.AttributeType.STRING
-      }
+      },
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
 
     const postsTable = new dynamodb.Table(this, 'PostsTable', {
@@ -34,7 +35,8 @@ export class CdkStack extends cdk.Stack {
       sortKey: {
         name: 'timestamp',
         type: dynamodb.AttributeType.STRING
-      }
+      },
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
 
     const getUserFunction = new lambda.Function(this, 'GetUser', {
